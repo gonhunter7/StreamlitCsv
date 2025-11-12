@@ -1,0 +1,210 @@
+{
+  "_signature": "PDLZ_v1::1762961674865",
+  "data": {
+    "variables": [
+      {
+        "id": "1579177681",
+        "name": "Felinos"
+      },
+      {
+        "id": "3878878366",
+        "name": "FelinosContados"
+      }
+    ],
+    "csvsData": [
+      {
+        "id": 619179687,
+        "filename": "felinos_filtrado.csv",
+        "columnsNames": [
+          "Unnamed: 0",
+          "kingdom",
+          "phylum",
+          "class",
+          "order",
+          "family",
+          "genus",
+          "species",
+          "locality",
+          "stateProvince",
+          "lat",
+          "lng",
+          "elevation",
+          "day",
+          "month",
+          "year",
+          "taxonKey",
+          "ScientificName",
+          "VernacularNames"
+        ]
+      }
+    ],
+    "blocks": {
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": [
+          {
+            "type": "variables_set",
+            "id": "#WOHK,BclD0?4iHOVSn~",
+            "x": 34,
+            "y": 56,
+            "fields": {
+              "variableSetterKey": "1579177681"
+            },
+            "inputs": {
+              "VALUE": {
+                "block": {
+                  "type": "property",
+                  "id": "_%8g7B2S|k~ii3Ojqgee",
+                  "extraState": {
+                    "selectedOption": "species"
+                  },
+                  "fields": {
+                    "dropdown": "species"
+                  },
+                  "inputs": {
+                    "blockInput": {
+                      "block": {
+                        "type": "read_csv",
+                        "id": "=%x}wJGfaUJO@w@6N=kU",
+                        "fields": {
+                          "csvOptions": "619179687"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "next": {
+              "block": {
+                "type": "variables_set",
+                "id": ".H*-/,/*~=K}N6sesm!`",
+                "fields": {
+                  "variableSetterKey": "3878878366"
+                },
+                "inputs": {
+                  "VALUE": {
+                    "block": {
+                      "type": "valueCounts",
+                      "id": ".n|?#h*i|@|_1|FHrx1y",
+                      "inputs": {
+                        "VALUE": {
+                          "block": {
+                            "type": "property",
+                            "id": "!+%#Gy{Da|`*EdS8Aqo(",
+                            "extraState": {
+                              "selectedOption": "species"
+                            },
+                            "fields": {
+                              "dropdown": "species"
+                            },
+                            "inputs": {
+                              "blockInput": {
+                                "block": {
+                                  "type": "read_csv",
+                                  "id": ";xS)%!n+)k(o0DbnMl~s",
+                                  "fields": {
+                                    "csvOptions": "619179687"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "next": {
+                  "block": {
+                    "type": "print_with_argument",
+                    "id": "UFjDEr:G3vhC(a/9f0,J",
+                    "inputs": {
+                      "ARGUMENT": {
+                        "block": {
+                          "type": "primitive_text",
+                          "id": "wBeQ%_+h,vkrX@z/B(]4",
+                          "fields": {
+                            "TEXT": "Grafico De Cantidad de Felinos Por SubEspecie"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "showInConsole",
+                        "id": "[;({?X/D|,zn)Y).s@tI",
+                        "inputs": {
+                          "VALUE": {
+                            "block": {
+                              "type": "bar",
+                              "id": "O5#b30yuVySKw%k@]vDy",
+                              "inputs": {
+                                "dataFrameValue": {
+                                  "block": {
+                                    "type": "variables_get",
+                                    "id": "cAC16-PQ%x=S.b=sI.XP",
+                                    "fields": {
+                                      "variableGetterKey": "1579177681"
+                                    }
+                                  }
+                                },
+                                "xValue": {
+                                  "block": {
+                                    "type": "get_column_name",
+                                    "id": "UXJ4^T{Qsjgc|p^~A/(h",
+                                    "inputs": {
+                                      "COLUMN_SERIES": {
+                                        "block": {
+                                          "type": "variables_get",
+                                          "id": "Iav)rkM||,2B?E5HS)-n",
+                                          "fields": {
+                                            "variableGetterKey": "1579177681"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "yValue": {
+                                  "block": {
+                                    "type": "index",
+                                    "id": "bs!c=2!jQ;]`;iaf,YFv",
+                                    "inputs": {
+                                      "argument": {
+                                        "block": {
+                                          "type": "variables_get",
+                                          "id": ".sOYs1#O5IvV-VdEI.L8",
+                                          "fields": {
+                                            "variableGetterKey": "1579177681"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "title": {
+                                  "block": {
+                                    "type": "primitive_text",
+                                    "id": "=wY1Q,T=%nI-)Qwj,GhI",
+                                    "fields": {
+                                      "TEXT": "Grafico de Felinos"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

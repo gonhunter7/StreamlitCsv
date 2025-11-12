@@ -25,12 +25,9 @@ if 'Ubicación' in lagos.columns:
 else:
     st.error("❌ No se encontró la columna 'Ubicación' en el CSV.")
 
-st.title("Gráfico")
+st.title("Gráfico De Felinos en Argentina")
 
-st.subheader("Cantidad de felinos por Especie")
 
-# Mostrar las columnas para verificar nombres
-st.write("Columnas del dataset:", felinos.columns.tolist())
 
 # Crear el gráfico de barras
 if 'species' in felinos.columns:
@@ -39,7 +36,7 @@ if 'species' in felinos.columns:
     conteo_tipos.plot(kind='bar', ax=ax, color='skyblue')
     ax.set_xlabel('Especies')
     ax.set_ylabel('Cantidad')
-    ax.set_title('Cantidad de Especies por especie')
+    ax.set_title('Cantidad de Felinos por Sub especie')
     st.pyplot(fig)
 else:
     st.error("❌ No se encontró la columna 'Ubicación' en el CSV.")

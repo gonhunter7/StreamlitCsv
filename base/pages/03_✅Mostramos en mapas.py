@@ -68,6 +68,8 @@ with tab_felinos:
 
     st.markdown("Este mapa muestra los avistamientos de felinos de Argentina, podiendo filtrar por especie")
     
+    st.markdown("Cada punto representa un felino avistado. De esta forma se puede ver en que provincia habitan mas determinados felinos")
+
     mapa = generar_mapa()
 
     ac1, ac2 = st.columns([0.3, 0.7])

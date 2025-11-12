@@ -21,7 +21,8 @@ with st.expander("¿Cuáles son los valores únicos de la columna **Sup Tamaño*
 with st.expander("¿Cuáles son los nombres de las columnas?"):
     st.write(lagos.columns)
 
-st.header("Datos que encontraron (Felinos)")
+st.header("Registro de Avistamientos de Felinos")
+st.markdown("Registro de leopardos, panteras y pumas avistados en Argentina desde 1937 hasta el 2012")
 with st.expander("¿Cuántas filas y columnas tiene el dataset?"):
     filas, columnas = felinos.shape
     st.write(f'Tiene {filas} filas y {columnas} columnas')
@@ -29,9 +30,9 @@ with st.expander("¿Cuántas filas y columnas tiene el dataset?"):
 nombres_ubic = felinos['genus'].unique()
 cant_ubic = len(nombres_ubic)
 
-with st.expander("¿Cuántos son los valores únicos de la columna **genus**?"):
+with st.expander("¿Cuántas especies tiene el Registro de Avistamientos?"):
     st.write(cant_ubic)
-with st.expander("¿Cuáles son los valores únicos de la columna **genus**?"):
+with st.expander("¿Cuáles Son las especies en el registro?"):
     st.write(nombres_ubic)
-with st.expander("¿Cuáles son los nombres de las columnas?"):
+with st.expander("¿Cuáles son los nombres de las columnas del registro de felinos?"):
     st.write(felinos.columns)
